@@ -18,6 +18,7 @@ public class AccessElementsFromArrayListExample {
         topCompanies.add("Microsoft");
         topCompanies.add("Amazon");
         topCompanies.add("Facebook");
+        topCompanies.add("Cisco");
 
         // Find the size of an ArrayList
         log.info("Here are the top " + topCompanies.size() + " companies in the world");
