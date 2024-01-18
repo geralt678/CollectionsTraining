@@ -1,8 +1,11 @@
 package com.example.collectionstraining.lists;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class CreateArrayListFromCollectionExample {
 
     public static void main(String[] args) {
@@ -27,6 +30,6 @@ public class CreateArrayListFromCollectionExample {
         // Adding an entire collection to an ArrayList
         firstTenPrimeNumbers.addAll(nextFivePrimeNumbers);
 
-        System.out.println(firstTenPrimeNumbers);
+        firstTenPrimeNumbers.forEach(nmbers -> log.info(nmbers.toString()));
     }
 }

@@ -1,6 +1,6 @@
 package com.example.collectionstraining.model;
 
-class User {
+public class User {
     private String name;
     private int age;
 

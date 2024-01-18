@@ -1,10 +1,14 @@
 package com.example.collectionstraining.lists;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+@Slf4j
 public class ArrayListIteratorRemoveExample {
+
     public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(13);
@@ -20,6 +24,6 @@ public class ArrayListIteratorRemoveExample {
             }
         }
 
-        System.out.println(numbers);
+        log.info(String.valueOf(numbers.size()));
     }
 }

@@ -1,9 +1,12 @@
 package com.example.collectionstraining.lists;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+@Slf4j
 public class ArrayListSortExample {
     public static void main(String[] args) {
         List<String> names = new ArrayList<>();
@@ -12,7 +15,7 @@ public class ArrayListSortExample {
         names.add("Mark");
         names.add("David");
 
-        System.out.println("Names : " + names);
+        log.info("Names : " + names);
 
         // Sort an ArrayList using its sort() method. You must pass a Comparator to the ArrayList.sort() method.
         names.sort(new Comparator<String>() {
@@ -28,6 +31,6 @@ public class ArrayListSortExample {
         // Following is an even more concise solution
         names.sort(Comparator.naturalOrder());
 
-        System.out.println("Sorted Names : " + names);
+        log.info("Sorted Names : " + names);
     }
 }

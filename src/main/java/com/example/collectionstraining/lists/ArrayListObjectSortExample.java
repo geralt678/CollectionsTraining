@@ -1,44 +1,15 @@
 package com.example.collectionstraining.lists;
 
+import com.example.collectionstraining.model.Person;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class Person {
-    private String name;
-    private Integer age;
 
-    public Person(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-}
-
+@Slf4j
 public class ArrayListObjectSortExample {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
@@ -47,7 +18,7 @@ public class ArrayListObjectSortExample {
         people.add(new Person("Rajeev", 25));
         people.add(new Person("David", 31));
 
-        System.out.println("Person List : " + people);
+        log.info("Person List : " + people);
 
         // Sort People by their Age
         people.sort((person1, person2) -> {
@@ -57,10 +28,10 @@ public class ArrayListObjectSortExample {
         // A more concise way of writing the above sorting function
         people.sort(Comparator.comparingInt(Person::getAge));
 
-        System.out.println("Sorted Person List by Age : " + people);
+        log.info("Sorted Person List by Age : " + people);
 
         // You can also sort using Collections.sort() method by passing the custom Comparator
         Collections.sort(people, Comparator.comparing(Person::getName));
-        System.out.println("Sorted Person List by Name : " + people);
+        log.info("Sorted Person List by Name : " + people);
     }
 }

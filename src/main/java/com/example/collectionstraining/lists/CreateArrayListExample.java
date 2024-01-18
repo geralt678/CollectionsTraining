@@ -1,8 +1,11 @@
 package com.example.collectionstraining.lists;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class CreateArrayListExample {
 
     public static void main(String[] args) {
@@ -15,11 +18,11 @@ public class CreateArrayListExample {
         animals.add("Cat");
         animals.add("Dog");
 
-        System.out.println(animals);
-
+        animals.forEach(log::info);
         // Adding an element at a particular index in an ArrayList
         animals.add(2, "Elephant");
 
-        System.out.println(animals);
+        animals.forEach(log::info);
+
     }
 }

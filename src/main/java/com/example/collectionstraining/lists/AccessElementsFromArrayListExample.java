@@ -1,14 +1,17 @@
 package com.example.collectionstraining.lists;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class AccessElementsFromArrayListExample {
     public static void main(String[] args) {
         List<String> topCompanies = new ArrayList<>();
 
         // Check if an ArrayList is empty
-        System.out.println("Is the topCompanies list empty? : " + topCompanies.isEmpty());
+        log.info("Is the topCompanies list empty? : " + topCompanies.isEmpty());
 
         topCompanies.add("Google");
         topCompanies.add("Apple");
@@ -17,20 +20,20 @@ public class AccessElementsFromArrayListExample {
         topCompanies.add("Facebook");
 
         // Find the size of an ArrayList
-        System.out.println("Here are the top " + topCompanies.size() + " companies in the world");
-        System.out.println(topCompanies);
+        log.info("Here are the top " + topCompanies.size() + " companies in the world");
+
 
         // Retrieve the element at a given index
         String bestCompany = topCompanies.get(0);
         String secondBestCompany = topCompanies.get(1);
         String lastCompany = topCompanies.get(topCompanies.size() - 1);
 
-        System.out.println("Best Company: " + bestCompany);
-        System.out.println("Second Best Company: " + secondBestCompany);
-        System.out.println("Last Company in the list: " + lastCompany);
+        log.info("Best Company: " + bestCompany);
+        log.info("Second Best Company: " + secondBestCompany);
+        log.info("Last Company in the list: " + lastCompany);
 
         // Modify the element at a given index
         topCompanies.set(4, "Walmart");
-        System.out.println("Modified top companies list: " + topCompanies);
+        log.info("Modified top companies list: " + topCompanies);
     }
 }

@@ -1,10 +1,14 @@
 package com.example.collectionstraining.lists;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+@Slf4j
 public class RemoveElementsFromArrayListExample {
+
     public static void main(String[] args) {
         List<String> programmingLanguages = new ArrayList<>();
         programmingLanguages.add("C");
@@ -15,16 +19,16 @@ public class RemoveElementsFromArrayListExample {
         programmingLanguages.add("Perl");
         programmingLanguages.add("Ruby");
 
-        System.out.println("Initial List: " + programmingLanguages);
+        log.info("Initial List: " + programmingLanguages);
 
         // Remove the element at index `5`
         programmingLanguages.remove(5);
-        System.out.println("After remove(5): " + programmingLanguages);
+        log.info("After remove(5): " + programmingLanguages);
 
         // Remove the first occurrence of the given element from the ArrayList
         // (The remove() method returns false if the element does not exist in the ArrayList)
         boolean isRemoved = programmingLanguages.remove("Kotlin");
-        System.out.println("After remove(\"Kotlin\"): " + programmingLanguages);
+        log.info("After remove(\"Kotlin\"): " + programmingLanguages);
 
         // Remove all the elements that exist in a given collection
         List<String> scriptingLanguages = new ArrayList<>();
@@ -33,7 +37,7 @@ public class RemoveElementsFromArrayListExample {
         scriptingLanguages.add("Perl");
 
         programmingLanguages.removeAll(scriptingLanguages);
-        System.out.println("After removeAll(scriptingLanguages): " + programmingLanguages);
+        log.info("After removeAll(scriptingLanguages): " + programmingLanguages);
 
         // Remove if the element matches a given predicate
         programmingLanguages.removeIf(new Predicate<String>() {
@@ -48,10 +52,10 @@ public class RemoveElementsFromArrayListExample {
             programmingLanguages.removeIf(s -> s.startsWith("C"))
         */
 
-        System.out.println("After Removing all elements that start with \"C\": " + programmingLanguages);
+        log.info("After Removing all elements that start with \"C\": " + programmingLanguages);
 
         // Remove all elements from the ArrayList
         programmingLanguages.clear();
-        System.out.println("After clear(): " + programmingLanguages);
+        log.info("After clear(): " + programmingLanguages);
     }
 }
