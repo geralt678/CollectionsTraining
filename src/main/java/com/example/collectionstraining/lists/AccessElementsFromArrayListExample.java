@@ -8,10 +8,42 @@ import java.util.List;
 @Slf4j
 public class AccessElementsFromArrayListExample {
     public static void main(String[] args) {
+
+
+        String [] colors = {"red", "black"};
+
+        log.info(colors[0]);
+
         List<String> topCompanies = new ArrayList<>();
 
+        topCompanies.add("firma-1");
+        topCompanies.add("firma-2");
+        topCompanies.add(1, "firma3");
+
+
+
+        //podstawowa pętla for
+        for (int i = 0; i < topCompanies.size(); i++) {
+            log.info("element numer: {} - {}", i, topCompanies.get(i));
+        }
+
+        log.info("zawiera? {} ", topCompanies.contains("firma3"));
+
+        topCompanies.remove("firma3");
+
+        //pętla foreach
+        for (String element : topCompanies) {
+            log.info("element numer: {} ", element);
+        }
+        log.info("zawiera? {} ", topCompanies.contains("firma3"));
+
+
+        // [0] [1] [2] [3]
+
+
+
         // Check if an ArrayList is empty
-        log.info("Is the topCompanies list empty? : " + topCompanies.isEmpty());
+        log.info("Is the topCompanies list empty? : {} {}", topCompanies.isEmpty(), colors[1]);
 
         topCompanies.add("Google");
         topCompanies.add("Apple");
