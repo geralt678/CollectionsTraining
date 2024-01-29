@@ -27,6 +27,9 @@ public class AccessElementsFromArrayListExample {
             log.info("element numer: {} - {}", i, topCompanies.get(i));
         }
 
+
+
+
         log.info("zawiera? {} ", topCompanies.contains("firma3"));
 
         topCompanies.remove("firma3");
